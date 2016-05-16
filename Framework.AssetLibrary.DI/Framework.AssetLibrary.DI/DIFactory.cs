@@ -29,7 +29,7 @@ namespace Framework.AssetLibrary.DI
 
         #region Private variables
 
-        private const string UnityContainerCacheKey = "Framework.AssetLibrary.DI.Unity.Contrainer";
+        private const string UnityContainerCacheKey = "Framework.AssetLibrary.DI.Unity.Container";
         private readonly IUnityContainer _unityContainer;
 
         #endregion Private variables
