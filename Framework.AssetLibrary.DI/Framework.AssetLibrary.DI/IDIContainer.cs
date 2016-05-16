@@ -3,12 +3,12 @@
 namespace Framework.AssetLibrary.DI
 {
     /// <summary>
-    /// Interface IDIContainer
+    ///     Interface IDIContainer
     /// </summary>
     public interface IDIContainer
     {
         /// <summary>
-        /// Gets the container.
+        ///     Gets the container.
         /// </summary>
         /// <value>The container.</value>
         IUnityContainer Container { get; }

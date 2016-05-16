@@ -7,7 +7,7 @@ namespace Framework.AssetLibrary.DI
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DIFactory"/> class.
+        ///     Initializes a new instance of the <see cref="DIFactory" /> class.
         /// </summary>
         public DIFactory()
         {
@@ -20,7 +20,7 @@ namespace Framework.AssetLibrary.DI
             }
             else
             {
-                _Container = cacheContext.Get<IDIContainer>(UnityContainerCacheKey) ;
+                _Container = cacheContext.Get<IDIContainer>(UnityContainerCacheKey);
             }
         }
 
@@ -36,7 +36,7 @@ namespace Framework.AssetLibrary.DI
         #region IUnityFactory Implementations
 
         /// <summary>
-        /// Gets the context.
+        ///     Gets the context.
         /// </summary>
         /// <returns>IDIContainer.</returns>
         public IDIContainer GetContext()
@@ -45,7 +45,7 @@ namespace Framework.AssetLibrary.DI
         }
 
         /// <summary>
-        /// Registers the specified settings.
+        ///     Registers the specified settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
         public void Register(IDIConfiguration settings)

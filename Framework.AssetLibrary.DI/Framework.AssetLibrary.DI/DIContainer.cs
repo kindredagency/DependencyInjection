@@ -3,12 +3,12 @@
 namespace Framework.AssetLibrary.DI
 {
     /// <summary>
-    /// Class DIContainer.
+    ///     Class DIContainer.
     /// </summary>
     public class DIContainer : IDIContainer
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DIContainer"/> class.
+        ///     Initializes a new instance of the <see cref="DIContainer" /> class.
         /// </summary>
         public DIContainer()
         {
@@ -16,13 +16,9 @@ namespace Framework.AssetLibrary.DI
         }
 
         /// <summary>
-        /// Gets the container.
+        ///     Gets the container.
         /// </summary>
         /// <value>The container.</value>
-        public IUnityContainer Container
-        {
-            get;
-            private set;
-        }
+        public IUnityContainer Container { get; }
     }
 }

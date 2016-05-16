@@ -1,6 +1,4 @@
-﻿using Microsoft.Practices.Unity;
-
-namespace Framework.AssetLibrary.DI
+﻿namespace Framework.AssetLibrary.DI
 {
     public interface IDIFactory
     {
