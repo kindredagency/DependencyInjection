@@ -4,7 +4,7 @@ namespace Framework.AssetLibrary.DI
 {
     public interface IDIFactory
     {
-        IUnityContainer GetContext();
+        IDIContainer GetContext();
         void Register(IDIConfiguration value);
     }
 }

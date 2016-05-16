@@ -1,5 +1,4 @@
 ﻿using Framework.AssetLibrary.Caching;
-using Microsoft.Practices.Unity;
 
 namespace Framework.AssetLibrary.DI
 {
@@ -8,7 +7,7 @@ namespace Framework.AssetLibrary.DI
         #region Constructors
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="DIFactory" /> class.
+        /// Initializes a new instance of the <see cref="DIFactory"/> class.
         /// </summary>
         public DIFactory()
         {
@@ -16,12 +15,12 @@ namespace Framework.AssetLibrary.DI
 
             if (!cacheContext.Contains(UnityContainerCacheKey))
             {
-                _unityContainer = new UnityContainer();
-                cacheContext.Add(UnityContainerCacheKey, _unityContainer);
+                _Container = new DIContainer();
+                cacheContext.Add(UnityContainerCacheKey, _Container);
             }
             else
             {
-                _unityContainer = cacheContext.Get<IUnityContainer>(UnityContainerCacheKey) ;
+                _Container = cacheContext.Get<IDIContainer>(UnityContainerCacheKey) ;
             }
         }
 
@@ -30,20 +29,19 @@ namespace Framework.AssetLibrary.DI
         #region Private variables
 
         private const string UnityContainerCacheKey = "Framework.AssetLibrary.DI.Unity.Container";
-        private readonly IUnityContainer _unityContainer;
+        private readonly IDIContainer _Container;
 
         #endregion Private variables
 
         #region IUnityFactory Implementations
 
         /// <summary>
-        ///     Gets the container.
+        /// Gets the context.
         /// </summary>
-        /// <returns>IUnityContainer.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public IUnityContainer GetContext()
+        /// <returns>IDIContainer.</returns>
+        public IDIContainer GetContext()
         {
-            return _unityContainer;
+            return _Container;
         }
 
         /// <summary>
@@ -52,7 +50,7 @@ namespace Framework.AssetLibrary.DI
         /// <param name="settings">The settings.</param>
         public void Register(IDIConfiguration settings)
         {
-            settings.Configuration(_unityContainer);
+            settings.Configuration(_Container.Container);
         }
 
         #endregion IUnityFactory Implementations
